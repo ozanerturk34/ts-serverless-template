@@ -3,7 +3,7 @@ hello:
   events:
     - http:
         method: POST
-        path: /auction
+        path: /hello
         request:
           schema:
             application/json: src/functions/hello/schema
