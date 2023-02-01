@@ -1,6 +1,6 @@
 # Serverless - AWS Node.js Typescript
 
-This is a template project inspired from `aws-nodejs-typescript` template from the [Serverless framework](https://www.serverless.com/).
+This is a template project inspired from `aws-nodejs-typescript` template from the [Serverless framework](https://www.serverless.com/). Main difference is this template uses serverless.yml instead of serverless.ts for service file
 
 ## Installation/deployment instructions
 
@@ -46,6 +46,8 @@ The project code base is mainly located within the `src` folder. This folder is 
 
 - `functions` - containing code base and configuration for your lambda functions
 - `libs` - containing shared code base between your lambdas
+- `models` - containing shared models across the app
+- `utils` - containing shared helper and utility methods
 
 ```
 .
@@ -56,10 +58,10 @@ The project code base is mainly located within the `src` folder. This folder is 
 │   │       └── schema.ts       # `Hello` lambda input event JSON-Schema
 │   │
 │   └── libs                    # Lambda shared code
-│       └── apiGateway.ts       # API Gateway specific helpers
-│       └── lambda.ts           # Lambda middleware
+│   │   └── apiGateway.ts       # API Gateway specific helpers
+│   │   └── lambda.ts           # Lambda middleware
 │   └── models                  # Shared typescript models across the app
-│       └── models.ts           # Main ts file holding general purpose models
+│   │   └── models.ts           # Main ts file holding general purpose models
 │   └── utils                   # Utility and helper methods
 │       └── helloHelpers.ts     # Includes all helpers for hello method
 │
@@ -75,9 +77,9 @@ The project code base is mainly located within the `src` folder. This folder is 
 
 ### 3rd party libraries
 
+- [http-errors](https://github.com/jshttp/http-errors) - creates HTTP errors for the app easily
 - [json-schema-to-ts](https://github.com/ThomasAribart/json-schema-to-ts) - uses JSON-Schema definitions used by API Gateway for HTTP request validation to statically generate TypeScript types in your lambda's handler code base
 - [middy](https://github.com/middyjs/middy) - middleware engine for Node.Js lambda. This template uses [http-json-body-parser](https://github.com/middyjs/middy/tree/master/packages/http-json-body-parser) to convert API Gateway `event.body` property, originally passed as a stringified JSON, to its corresponding parsed object
-- [@serverless/typescript](https://github.com/serverless/typescript) - provides up-to-date TypeScript definitions for your `serverless.ts` service file
 
 ### Advanced usage
 
