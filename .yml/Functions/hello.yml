@@ -1,0 +1,9 @@
+hello:
+  handler: src/functions/hello/handler.main
+  events:
+    - http:
+        method: POST
+        path: /auction
+        request:
+          schema:
+            application/json: src/functions/hello/schema
