@@ -1,4 +1,4 @@
-service: notification-service
+service: template
 frameworkVersion: "3"
 
 plugins:
